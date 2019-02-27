@@ -4,7 +4,7 @@ import Card from './Card.js';
 import Rating from './rating.js';
 import Search from './Search.js';
 import NewFilm from './NewFilm.js';
-
+import LoadingHoc from './Hoc.js'
 // const Movie = [
 //     {
 //         title:'Creed II',
@@ -60,10 +60,10 @@ class CardContainer extends React.Component {
          this.setState ({ listOfMovies : this.state.listOfMovies.concat(data)})
      }
      //search using rate
-     searchRateMovie = (rate) =>
+     searchRateMovie = (i) =>
      {
             // Movie = Movie.concat(data);
-         this.setState ({ rate : rate})
+         this.setState ({ rate : i})
      }
 
   render() {
@@ -95,4 +95,4 @@ class CardContainer extends React.Component {
   }
 }
 
-export default CardContainer
+export default LoadingHoc(CardContainer)
